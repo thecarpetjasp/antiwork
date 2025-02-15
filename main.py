@@ -18,9 +18,8 @@ To use the program, run with 'python main.py'. Set the WAIT_DELAY
 variable to as many seconds that you want for the mouse movement to
 begin from the moment you stopped moving the mouse.
 
-Once the mouse begins moving - simple move your mouse manually to
-stop. It's best to manually move your mouse up and down or in all
-directions when trying to stop it.
+Once the mouse begins moving - simply move your mouse manually to
+stop.
 """
 
 # Set this to how many seconds the mouse should be idle before automation kicks in

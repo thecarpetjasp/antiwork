@@ -3,7 +3,7 @@ A simple Python script to simulate mouse movement in order to prevent screen sav
 
 
 ## How It Works
-This script moves your mouse automatically every few seconds if the mouse is idle (does not move vertically). The movement alternates between moving the cursor left and right, mimicking natural user behavior while avoiding detection by anti-idle software.
+This script moves your mouse automatically every few seconds if the mouse is idle. The movement alternates between moving the cursor left and right, mimicking natural user behavior while avoiding detection by anti-idle software.
 
 
 ## Key Features:

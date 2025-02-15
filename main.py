@@ -34,8 +34,8 @@ switch = False
 print("Program is active...")
 
 while True:
-    time.sleep(0.1)
     try:
+        time.sleep(0.1)
         # Checks to see if the mouse has moved from its previous position
         if pag.position().y == prev_position.y:
             # If so, and there is no recorded time, then we start recording now

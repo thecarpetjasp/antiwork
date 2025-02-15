@@ -1,4 +1,4 @@
-# Mouse Jiggler Script
+# Antiwork Mouse Jiggler Script
 A simple Python script to simulate mouse movement in order to prevent screen savers or auto-lock features from activating during periods of inactivity.
 
 

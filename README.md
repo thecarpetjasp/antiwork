@@ -8,7 +8,6 @@ This script moves your mouse automatically every few seconds if the mouse is idl
 
 ## Key Features:
 - Idle Detection: Waits for a period of inactivity (default 5 seconds).
-- Stealth X-Axis Movement: Moves the mouse along the X-axis without triggering unnecessary resets.
 - Customizable Delay: Set your own inactivity delay time.
 - No Installation Required: Just run the script using Python. `python main.py`
 

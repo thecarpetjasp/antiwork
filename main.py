@@ -1,5 +1,17 @@
+import os
 import time
-import pyautogui as pag
+try:
+    import pyautogui as pag
+except:
+    print("Could not find PYAUTOGUI. Downloading now...")
+    if not os.path.exists("requirements.txt"):
+        print("You must run this file in the same directory as requirements.txt!")
+        print("Download the full antiwork repo - not just main.py: https://github.com/thecarpetjasp/antiwork/")
+        exit()
+    os.system("pip install -r requirements.txt")
+    print("\nDownload successful.")
+    print("Re-run main.py now.")
+    exit()
 
 """
 To use the program, run with 'python main.py'. Set the WAIT_DELAY
@@ -12,7 +24,7 @@ directions when trying to stop it.
 """
 
 # Set this to how many seconds the mouse should be idle before automation kicks in
-WAIT_DELAY = 1
+WAIT_DELAY = 5
 
 # Initialising configurations
 prev_position = pag.position()

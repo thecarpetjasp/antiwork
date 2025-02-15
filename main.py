@@ -11,28 +11,49 @@ stop. It's best to manually move your mouse up and down or in all
 directions when trying to stop it.
 """
 
-WAIT_DELAY = 5
+# Set this to how many seconds the mouse should be idle before automation kicks in
+WAIT_DELAY = 1
 
+# Initialising configurations
 prev_position = pag.position()
 start_time = None
+steps = 5
 switch = False
 
 print("Program is active...")
 
 while True:
+    time.sleep(0.1)
     try:
+        # Checks to see if the mouse has moved from its previous position
         if pag.position().y == prev_position.y:
+            # If so, and there is no recorded time, then we start recording now
             if not start_time:
                 start_time = time.time()
                 continue
+            # Checks if the mouse has been idle for our predefined number of seconds
             if time.time() - start_time > WAIT_DELAY:
-                if switch:
-                    direction = 50
-                else:
-                    direction = -50
+                # Alternate between our X-Axis direction of movement
                 switch = not(switch)
-                pag.moveTo(pag.position().x+direction, pag.position().y, 0.3)
+                #
+                # We only automate mouse movements along the X-Axis!
+                #
+                # The X-axis acts like a hidden dimension to our entire script
+                # because our logic only checks for movement along the Y-Axis.
+                #
+                # We can safely use the Y-axis as an explicit check as any natural
+                # human mouse movements will contain at least (1) pixel movement
+                # along the Y-axis - making the X-axis a hidden area for automation
+                # to avoid resets.
+                #
+                # This makes for a more cleaner and efficient code design.
+                for _ in range(steps):
+                    direction = steps * (1 if switch else -1)
+                    pag.moveTo(pag.position().x+direction, pag.position().y)
+                    if pag.position().y != prev_position.y:
+                        break
         else:
+            # Resets our configurations if the mouse starts / is moving.
             prev_position = pag.position()
             start_time = None
     except KeyboardInterrupt:

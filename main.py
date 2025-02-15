@@ -15,11 +15,11 @@ except:
 
 """
 To use the program, run with 'python main.py'. Set the WAIT_DELAY
-variable to as many seconds that you want for the mouse movement to
-begin from the moment you stopped moving the mouse.
+variable in seconds. This will determine how long you must be idle
+before automation starts.
 
-Once the mouse begins moving - simply move your mouse manually to
-stop.
+Once the automated mouse begins moving - simply move your mouse
+manually to stop.
 """
 
 # Set this to how many seconds the mouse should be idle before automation kicks in
